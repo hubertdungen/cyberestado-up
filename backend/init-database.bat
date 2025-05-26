@@ -20,15 +20,15 @@ echo Conexao OK!
 
 echo.
 echo [2] Criando banco de dados...
-psql -U postgres -h localhost -c "DROP DATABASE IF EXISTS cyberestado_up;"
-psql -U postgres -h localhost -c "CREATE DATABASE cyberestado_up;"
+psql -U postgres -h localhost -c "DROP schema IF EXISTS cyberestado_up;"
+psql -U postgres -h localhost -c "CREATE schema cyberestado_up;"
 
 echo.
 echo [3] Aplicando schema...
 cd cyberestado-up\backend
 if exist schema.sql (
     psql -U postgres -h localhost -d cyberestado_up -f schema.sql
-    echo Schema aplicado!
+    echo schema aplicado!
 ) else (
     echo ERRO: schema.sql nao encontrado!
     pause
@@ -37,7 +37,7 @@ if exist schema.sql (
 
 echo.
 echo [4] Aplicando atualizacoes...
-if exist database-updates.sql (
+if exist schema-updates.sql (
     psql -U postgres -h localhost -d cyberestado_up -f database-updates.sql
     echo Atualizacoes aplicadas!
 )

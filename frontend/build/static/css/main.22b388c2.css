@@ -1,2 +1,0 @@
-@tailwind base;@tailwind components;@tailwind utilities;@layer base{:root{--color-primary:#7c3aed;--color-secondary:#dc2626;--color-background:#000}}@keyframes pulse-slow{0%,to{opacity:1}50%{opacity:.5}}.animate-pulse-slow{animation:pulse-slow 3s cubic-bezier(.4,0,.6,1) infinite}
-/*# sourceMappingURL=main.22b388c2.css.map*/
